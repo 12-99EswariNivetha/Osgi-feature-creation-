@@ -1,0 +1,7 @@
+local:com.thelaunchclub:StudentView:jar:0.0.1-SNAPSHOT (compile)
+ local:com.thelaunchclub:StudentController:jar:0.0.1-SNAPSHOT (compile)
+  local:com.thelaunchclub:StudentModel:jar:0.0.1-SNAPSHOT (compile)
+  local:com.thelaunchclub:StudentService:jar:0.0.1-SNAPSHOT (compile)
+   local:com.thelaunchclub:CustomException:jar:0.0.1-SNAPSHOT (compile)
+   local:com.thelaunchclub:StudentDao:jar:0.0.1-SNAPSHOT (compile)
+    local:org.postgresql:postgresql:jar:42.3.1 (compile)

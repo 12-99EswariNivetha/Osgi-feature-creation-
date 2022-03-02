@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1646200260742
+Build-Jdk-Spec: 17
+Bundle-Activator: com.thelaunchclub.StudentController.Activator
+Bundle-Description: StudentController OSGi bundle project.
+Bundle-ManifestVersion: 2
+Bundle-Name: StudentController Bundle
+Bundle-SymbolicName: StudentController
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin 5.1.4
+Export-Package: com.thelaunchclub.StudentController;version="0.0.1.SNAPS
+ HOT";uses:="com.thelaunchclub.StudentModel,org.osgi.framework"
+Import-Package: com.thelaunchclub.StudentModel;version="[0.0,1)",com.the
+ launchclub.StudentService;version="[0.0,1)",org.osgi.framework;version=
+ "[1.9,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-5.1.1.202006162103

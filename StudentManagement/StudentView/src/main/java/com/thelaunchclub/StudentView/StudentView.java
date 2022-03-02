@@ -7,7 +7,7 @@ import java.util.Scanner;
 import com.thelaunchclub.CustomException.CustomException;
 import com.thelaunchclub.StudentController.StudentController;
 import com.thelaunchclub.StudentModel.Student;
-import org.apache.log4j.Logger;
+
 
 
 /**

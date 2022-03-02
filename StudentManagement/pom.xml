@@ -12,6 +12,8 @@
     <module>StudentModel</module>
     <module>StudentService</module>
     <module>StudentView</module>
-    <module>Feature</module>
+    <module>SampleFeature</module>
+
+
   </modules>
 </project>

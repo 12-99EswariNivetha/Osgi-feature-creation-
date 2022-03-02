@@ -16,7 +16,7 @@
  */
 package com.thelaunchclub.StudentView;
 
-import org.apache.log4j.PropertyConfigurator;
+
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 

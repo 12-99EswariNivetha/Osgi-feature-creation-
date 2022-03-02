@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1646200261035
+Build-Jdk-Spec: 17
+Bundle-Activator: com.thelaunchclub.StudentView.Activator
+Bundle-Description: StudentView OSGi bundle project.
+Bundle-ManifestVersion: 2
+Bundle-Name: StudentView Bundle
+Bundle-SymbolicName: StudentView
+Bundle-Version: 0.0.1.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin 5.1.4
+Export-Package: com.thelaunchclub.StudentView;version="0.0.1.SNAPSHOT";u
+ ses:="com.thelaunchclub.StudentModel,org.osgi.framework"
+Import-Package: com.thelaunchclub.CustomException;version="[0.0,1)",com.
+ thelaunchclub.StudentController;version="[0.0,1)",com.thelaunchclub.Stu
+ dentModel;version="[0.0,1)",org.osgi.framework;version="[1.9,2)"
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-5.1.1.202006162103
