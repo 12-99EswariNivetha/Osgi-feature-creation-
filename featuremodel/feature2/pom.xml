@@ -25,10 +25,7 @@
     -->
 
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>feature2</artifactId>
-
-
     <name>feature2-feature</name>
     <description>feature2 details</description>
 
@@ -41,27 +38,21 @@
     </dependencies>
 
     <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.karaf.tooling</groupId>
-                    <artifactId>karaf-maven-plugin</artifactId>
-                    <version>4.3.6</version>
-                    <extensions>true</extensions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
         <plugins>
             <plugin>
                 <groupId>org.apache.karaf.tooling</groupId>
                 <artifactId>karaf-maven-plugin</artifactId>
+                <version>4.3.6</version>
+                <extensions>true</extensions>
                 <executions>
                     <execution>
                         <id>generate</id>
                         <phase>generate-resources</phase>
-                        <goals><goal>
-                          features-generate-descriptor
-                        </goal></goals>
+                        <goals>
+                            <goal>
+                                features-generate-descriptor
+                            </goal>
+                        </goals>
                     </execution>
                 </executions>
                 <configuration>
@@ -75,5 +66,4 @@
             </plugin>
         </plugins>
     </build>
-
 </project>

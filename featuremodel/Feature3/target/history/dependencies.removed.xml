@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0">
+    <feature version="0.0.0">
+        <feature>wrap</feature>
+        <bundle>wrap:mvn:com.launchclub/feature1/1.0-SNAPSHOT</bundle>
+        <bundle>wrap:mvn:com.launchclub/feature2/1.0-SNAPSHOT</bundle>
+    </feature>
+</features>

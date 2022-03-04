@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="Feature3-1.0-SNAPSHOT">
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0">
     <feature version="0.0.0">
         <feature>feature1</feature>
         <feature>feature2</feature>
         <bundle>mvn:com.launchclub/model1/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:com.launchclub/model1/1.0-SNAPSHOT</bundle>
-        <bundle>mvn:com.launchclub/model2/1.0-SNAPSHOT</bundle>
     </feature>
 </features>
