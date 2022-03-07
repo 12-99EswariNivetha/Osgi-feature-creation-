@@ -3,7 +3,6 @@ package com.launchclub.studentdao;
 import com.launchclub.dbconnection.DataBaseConnection;
 import com.launchclub.exception.CustomException.SqlQueryException;
 import com.launchclub.model.Student;
-import org.osgi.service.component.annotations.Reference;
 
 import java.sql.*;
 import java.util.HashMap;
@@ -15,8 +14,8 @@ import java.util.Map;
  * @author EswariNivethaVU
  */
 public class StudentDaoImpl implements StudentDao {
-    @Reference
-    private static DataBaseConnection dataBaseConnection;
+
+    private static final DataBaseConnection DBCONNECTION = new DataBaseConnection();
 
     /**
      * AddStudent details to database.
@@ -26,7 +25,7 @@ public class StudentDaoImpl implements StudentDao {
     public boolean addStudent(final Student student) {
         final String InsertStudent = "INSERT INTO student(rollno, name, standard, phoneno, emailid, joiningdate, isdeleted) VALUES (?, ?, ?, ?, ?, ? ,?)";
 
-        try (Connection connection = dataBaseConnection.getConnection();
+        try (Connection connection = DBCONNECTION.getConnection();
              PreparedStatement statement = connection.prepareStatement(InsertStudent);) {
             statement.setInt(1, student.getRollNo());
             statement.setString(2, student.getName());
@@ -50,7 +49,7 @@ public class StudentDaoImpl implements StudentDao {
     public boolean removeStudent(final int rollno) {
         final String removeStudent = "UPDATE student SET isdeleted = ? where rollno = ? and isdeleted = ? ";
 
-        try (Connection connection = dataBaseConnection.getConnection();
+        try (Connection connection = DBCONNECTION.getConnection();
              PreparedStatement statement = connection.prepareStatement(removeStudent);) {
             statement.setBoolean(1, true);
             statement.setInt(2, rollno);
@@ -69,7 +68,7 @@ public class StudentDaoImpl implements StudentDao {
         final String getstudent = "Select * From student where isdeleted = false ";
         final Map<Integer, Student> Studentlist = new HashMap<Integer, Student>();
 
-        try (Connection connection = dataBaseConnection.getConnection();
+        try (Connection connection = DBCONNECTION.getConnection();
              PreparedStatement statement = connection.prepareStatement(getstudent);
              ResultSet resultset = statement.executeQuery();) {
 
@@ -93,7 +92,7 @@ public class StudentDaoImpl implements StudentDao {
      */
     public boolean updateStudents(final Student student) {
 
-        try (Connection connection = dataBaseConnection.getConnection();) {
+        try (Connection connection = DBCONNECTION.getConnection();) {
             final StringBuilder queryBuilder = new StringBuilder();
             String updateStudent = queryBuilder.append("update student set").toString();
             boolean hasNextField = false;
@@ -182,7 +181,7 @@ public class StudentDaoImpl implements StudentDao {
         Student student = null;
         final String getstudent = "Select rollno, name, standard, emailid, phoneno, joiningdate From student where rollno = ?";
 
-        try (final Connection connection = dataBaseConnection.getConnection();
+        try (final Connection connection = DBCONNECTION.getConnection();
              final PreparedStatement statement = connection.prepareStatement(getstudent);) {
             statement.setInt(1, rollno);
 
