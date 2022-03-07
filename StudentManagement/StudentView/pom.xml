@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>StudentManagement</artifactId>
+        <groupId>com.thelaunchclub</groupId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
 
     <!--
        Licensed to the Apache Software Foundation (ASF) under one
@@ -22,19 +28,13 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <parent>
-    <artifactId>StudentManagement</artifactId>
-    <groupId>com.thelaunchclub</groupId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-
-    <groupId>com.thelaunchclub</groupId>
-    <artifactId>StudentView</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <artifactId>studentview</artifactId>
     <packaging>bundle</packaging>
 
-    <name>StudentView Bundle</name>
-    <description>StudentView OSGi bundle project.</description>
+    <name>studentview Bundle</name>
+    <description>
+        studentview OSGi bundle project.
+    </description>
 
     <properties>
         <maven-bundle-plugin.version>5.1.4</maven-bundle-plugin.version>
@@ -48,14 +48,31 @@
             <version>${osgi.version}</version>
             <scope>provided</scope>
         </dependency>
-
         <dependency>
-		<groupId>com.thelaunchclub</groupId>
-	<artifactId>StudentController</artifactId>
-	<version>0.0.1-SNAPSHOT</version></dependency>
-
+            <groupId>com.launchclub</groupId>
+            <artifactId>validation</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>customexception</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>studentmodelservicecontroller</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>studentmodel</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
-
 
     <build>
         <plugins>
@@ -68,9 +85,13 @@
                     <instructions>
                         <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
                         <Bundle-Version>${project.version}</Bundle-Version>
-                        <Bundle-Activator>com.thelaunchclub.StudentView.Activator</Bundle-Activator>
-                        <Export-Package>com.thelaunchclub.StudentView*;version=${project.version}</Export-Package>
-                        <Import-Package>*</Import-Package>
+                        <Bundle-Activator>com.launchclub.Activator</Bundle-Activator>
+                        <Export-Package>
+                            com.launchclub*;version=${project.version}
+                        </Export-Package>
+                        <Import-Package>
+                            *
+                        </Import-Package>
                     </instructions>
                 </configuration>
             </plugin>

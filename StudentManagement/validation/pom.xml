@@ -28,12 +28,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>customexception</artifactId>
+    <artifactId>validation</artifactId>
     <packaging>bundle</packaging>
 
-    <name>customexception Bundle</name>
+    <name>validation Bundle</name>
     <description>
-        customexception OSGi bundle project.
+        validation OSGi bundle project.
     </description>
 
     <properties>
@@ -47,6 +47,12 @@
             <artifactId>osgi.core</artifactId>
             <version>${osgi.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>customexception</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 

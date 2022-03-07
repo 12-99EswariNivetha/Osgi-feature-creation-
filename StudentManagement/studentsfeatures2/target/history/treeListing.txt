@@ -1,0 +1,5 @@
+local:com.thelaunchclub:validation:jar:0.0.1-SNAPSHOT (compile)
+ local:com.launchclub:customexception:jar:1.0-SNAPSHOT (compile)
+local:com.thelaunchclub:customexception:jar:0.0.1-SNAPSHOT (compile)
+local:com.thelaunchclub:studentdbconnection:jar:0.0.1-SNAPSHOT (compile)
+ local:org.postgresql:postgresql:jar:42.3.1 (compile)

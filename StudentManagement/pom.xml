@@ -6,14 +6,15 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <modules>
-    <module>StudentController</module>
-    <module>StudentDao</module>
-    <module>CustomException</module>
-    <module>StudentModel</module>
-    <module>StudentService</module>
-    <module>StudentView</module>
-    <module>SampleFeature</module>
 
+    <module>customexception</module>
+    <module>studentdbconnection</module>
+    <module>validation</module>
+    <module>studentview</module>
+    <module>studentmodelservicecontroller</module>
+    <module>studentsfeatures1</module>
+    <module>studentsfeatures2</module>
+    <module>studentsfeatures3</module>
 
   </modules>
 </project>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="studentsfeatures2-0.0.1-SNAPSHOT">
+    <feature version="0.0.0">
+        <bundle>mvn:com.launchclub/customexception/1.0-SNAPSHOT</bundle>
+        <bundle>mvn:com.thelaunchclub/customexception/0.0.1-SNAPSHOT</bundle>
+        <bundle>mvn:com.thelaunchclub/studentdbconnection/0.0.1-SNAPSHOT</bundle>
+        <bundle>mvn:com.thelaunchclub/validation/0.0.1-SNAPSHOT</bundle>
+        <bundle>mvn:org.postgresql/postgresql/42.3.1</bundle>
+    </feature>
+</features>
