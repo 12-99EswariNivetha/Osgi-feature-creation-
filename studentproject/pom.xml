@@ -14,7 +14,7 @@
         <module>validation</module>
         <module>studentview</module>
         <module>studentmanagement</module>
-        <module>studentfeature1</module>
+        <module>studentfeature</module>
     </modules>
 
     <properties>
