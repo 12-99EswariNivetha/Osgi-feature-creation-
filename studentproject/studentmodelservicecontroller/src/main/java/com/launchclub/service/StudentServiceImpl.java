@@ -1,7 +1,6 @@
 package com.launchclub.service;
-
-
-import com.launchclub.CustomException;
+import com.launchclub.exception.CustomException.RecordNotfoundException;
+import com.launchclub.exception.CustomException.IdAlreadyFoundException;
 import com.launchclub.model.Student;
 import com.launchclub.studentdao.StudentDaoImpl;
 
@@ -36,7 +35,7 @@ public class StudentServiceImpl {
         if (STUDENTDAO.removeStudent(rollNo)) {
             return true;
         }
-        throw new CustomException.RecordNotfoundException(" Record Not Found ");
+        throw new RecordNotfoundException(" Record Not Found ");
     }
 
     /**
@@ -48,7 +47,7 @@ public class StudentServiceImpl {
         if (!students.isEmpty()) {
             return students;
         }
-        throw new CustomException.RecordNotfoundException(" Record Not Found ");
+        throw new RecordNotfoundException(" Record Not Found ");
     }
 
     /**
@@ -61,7 +60,7 @@ public class StudentServiceImpl {
         if (STUDENTDAO.updateStudents(student)) {
             return true;
         }
-        throw new CustomException.RecordNotfoundException(" Record Not Found ");
+        throw new RecordNotfoundException(" Record Not Found ");
     }
 
     /**
@@ -74,7 +73,7 @@ public class StudentServiceImpl {
         if (STUDENTDAO.getAllStudents().containsKey(rollNo)) {
             return STUDENTDAO.selectStudent(rollNo);
         } else {
-            throw new CustomException.RecordNotfoundException("Record Not Found");
+            throw new RecordNotfoundException("Record Not Found");
         }
     }
 
@@ -88,7 +87,7 @@ public class StudentServiceImpl {
         if (!STUDENTDAO.getAllStudents().containsKey(rollNo)) {
             return true;
         }
-        throw new CustomException.IdAlreadyFoundException("The Given RollNo Already Exist in Table.\n Re-Enter RollNo ");
+        throw new IdAlreadyFoundException("The Given RollNo Already Exist in Table.\n Re-Enter RollNo ");
     }
 
     /**
@@ -101,6 +100,6 @@ public class StudentServiceImpl {
         if (STUDENTDAO.getAllStudents().containsKey(rollNo)) {
             return true;
         }
-        throw new CustomException.RecordNotfoundException("Record Not Found");
+        throw new RecordNotfoundException("Record Not Found");
     }
 }

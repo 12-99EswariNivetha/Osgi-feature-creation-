@@ -1,6 +1,6 @@
 package com.launchclub.studentdao;
-import com.launchclub.CustomException;
-import com.launchclub.DataBaseConnection;
+import com.launchclub.dbconnection.DataBaseConnection;
+import com.launchclub.exception.CustomException.SqlQueryException;
 import com.launchclub.model.Student;
 import java.sql.*;
 import java.util.HashMap;
@@ -36,7 +36,7 @@ public class StudentDaoImpl implements StudentDao {
 
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
-            throw new CustomException.SqlQueryException("Invalid Query So Database Access Failed");
+            throw new SqlQueryException("Invalid Query So Database Access Failed");
         }
     }
 
@@ -56,7 +56,7 @@ public class StudentDaoImpl implements StudentDao {
 
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
-            throw new CustomException.SqlQueryException("Invalid Query So Database Access Failed");
+            throw new SqlQueryException("Invalid Query So Database Access Failed");
         }
     }
 
@@ -79,7 +79,7 @@ public class StudentDaoImpl implements StudentDao {
                 Studentlist.put(student.getRollNo(), student);
             }
         } catch (SQLException e) {
-            throw new CustomException.SqlQueryException("Invalid Query So Database Access Failed");
+            throw new SqlQueryException("Invalid Query So Database Access Failed");
         }
         return Studentlist;
     }
@@ -167,7 +167,7 @@ public class StudentDaoImpl implements StudentDao {
             statement.setInt(rollNo, student.getRollNo());
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
-            throw new CustomException.SqlQueryException("Invalid Query So Database Access Failed ");
+            throw new SqlQueryException("Invalid Query So Database Access Failed ");
         }
     }
 
@@ -197,7 +197,7 @@ public class StudentDaoImpl implements StudentDao {
                 }
             }
         } catch (SQLException e) {
-            throw new CustomException.SqlQueryException(" Invalid Query So Database Access Failed");
+            throw new SqlQueryException(" Invalid Query So Database Access Failed");
         }
         return student;
     }

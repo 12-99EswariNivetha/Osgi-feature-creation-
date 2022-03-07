@@ -16,13 +16,16 @@
  */
 package com.launchclub;
 
+import com.launchclub.studentview.StudentManagement;
+import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 public class Activator implements BundleActivator {
-
+public static Bundle bundle;
     public void start(BundleContext context) {
         System.out.println("Starting the View bundle");
+        bundle=context.getBundle();
         StudentManagement.selectChoice();
     }
 
