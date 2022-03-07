@@ -13,9 +13,8 @@
         <module>studentdbconnection</module>
         <module>validation</module>
         <module>studentview</module>
-        <module>studentmodelservicecontroller</module>
-        <module>samplefeature1</module>
-
+        <module>studentmanagement</module>
+        <module>studentfeature1</module>
     </modules>
 
     <properties>

@@ -3,7 +3,8 @@ package com.launchclub.studentview;
 import com.launchclub.controller.StudentController;
 import com.launchclub.exception.CustomException;
 import com.launchclub.model.Student;
-import com.launchclub.validation.Validation;
+import com.launchclub.validation.StudentValidationImpl;
+import org.osgi.service.component.annotations.Reference;
 
 import java.sql.Date;
 import java.util.Map.Entry;
@@ -14,11 +15,12 @@ import java.util.Scanner;
  * displays "User input".
  */
 public class StudentView {
+    @Reference
+    private static StudentValidationImpl validate;
 
     private static final Scanner SCANNER = new Scanner(System.in);
-    private static final Validation VALIDATOR = new Validation();
     private static final StudentController STUDENTCONTROLLER = new StudentController();
-   // private static final Logger LOGGER = Logger.getLogger(StudentView.class);
+    // private static final Logger LOGGER = Logger.getLogger(StudentView.class);
 
     /**
      * Get rollno from the user.
@@ -28,7 +30,7 @@ public class StudentView {
         final String rollNo = SCANNER.next().trim();
         StudentView.backToMain(rollNo);
 
-        if (VALIDATOR.validateRollNo(rollNo)) {
+        if (validate.validateRollNo(rollNo)) {
             return Integer.parseInt(rollNo);
         } else {
             System.out.println("InValid RollNo Please Enter a valid RollNo \n Press @ To Exit to Main Menu");
@@ -44,7 +46,7 @@ public class StudentView {
         final String name = SCANNER.next().trim();
         StudentView.backToMain(name);
 
-        if (VALIDATOR.validateName(name)) {
+        if (validate.validateName(name)) {
             return name;
         } else {
             System.out.println(" InValid Name Please Enter a valid Name \n Press @ To Exit to Main Menu");
@@ -60,7 +62,7 @@ public class StudentView {
         final String standard = SCANNER.next().trim();
         StudentView.backToMain(standard);
 
-        if (VALIDATOR.validateStandard(standard)) {
+        if (validate.validateStandard(standard)) {
             return standard;
         } else {
             System.out.println(" InValid Standard Please Enter a valid Standard  \n Press @ To Exit to Main Menu");
@@ -76,7 +78,7 @@ public class StudentView {
         final String phoneNo = SCANNER.next().trim();
         StudentView.backToMain(phoneNo);
 
-        if (VALIDATOR.validatePhoneNo(phoneNo)) {
+        if (validate.validatePhoneNo(phoneNo)) {
             return Long.parseLong(phoneNo);
         } else {
             System.out.println(" InValid PhoneNo Please Enter a valid PhoneNo \n Press @ To Exit to Main Menu");
@@ -92,7 +94,7 @@ public class StudentView {
         final String emailId = SCANNER.next().trim();
         StudentView.backToMain(emailId);
 
-        if (VALIDATOR.validateEmailId(emailId)) {
+        if (validate.validateEmailId(emailId)) {
             return emailId;
         } else {
             System.out.println("InValid EmailId Please Enter a valid MailId  \n Press @ To Exit to Main Menu");
@@ -110,7 +112,7 @@ public class StudentView {
         boolean isValid = false;
 
         try {
-            isValid = VALIDATOR.validateDate(date);
+            isValid = validate.validateDate(date);
         } catch (CustomException e) {
             System.out.println(e);
         }
@@ -240,7 +242,7 @@ public class StudentView {
 
     /**
      * Checking next field for update.
-     * 
+     *
      * @param student
      * @param studentdetail
      * @return
@@ -287,7 +289,7 @@ public class StudentView {
     public static String getChoice() {
         final String choice = StudentManagement.SCANNER.next().trim();
 
-        if (VALIDATOR.validateChoice(choice)) {
+        if (validate.validateChoice(choice)) {
             return choice;
         } else {
             System.out.println("Please Enter Valid Choice use only [1-6]");

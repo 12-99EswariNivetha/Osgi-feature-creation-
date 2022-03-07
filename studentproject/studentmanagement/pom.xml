@@ -9,12 +9,12 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>customexception</artifactId>
+    <artifactId>studentmanagement</artifactId>
     <packaging>bundle</packaging>
 
-    <name>customexception Bundle</name>
+    <name>studentmanagement Bundle</name>
     <description>
-        customexception OSGi bundle project.
+        studentmanagement OSGi bundle project.
     </description>
 
     <properties>
@@ -28,6 +28,35 @@
             <artifactId>osgi.core</artifactId>
             <version>${osgi.version}</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>studentdbconnection</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>customexception</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.launchclub</groupId>
+            <artifactId>studentmodel</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.component.annotations</artifactId>
+            <version>1.5.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.component</artifactId>
+            <version>1.5.0</version>
         </dependency>
     </dependencies>
 
@@ -61,6 +90,8 @@
                     <maxmem>256M</maxmem>
                 </configuration>
             </plugin>
+
         </plugins>
     </build>
+
 </project>

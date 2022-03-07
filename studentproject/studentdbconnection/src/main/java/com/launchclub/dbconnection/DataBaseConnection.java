@@ -1,13 +1,16 @@
 package com.launchclub.dbconnection;
 
+import org.osgi.service.component.annotations.Component;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 
 /**
  * DataBase Connection.
- * 
+ *
  * @author EswariNivethaVU
  */
+@Component
 public class DataBaseConnection {
 
     /**

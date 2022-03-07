@@ -26,7 +26,7 @@ public class CustomException extends RuntimeException {
             super(msg);
         }
     }
-    
+
     public static class InValidDateException extends CustomException {
 
         public InValidDateException(String msg) {
