@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="studentfeature-1.0-SNAPSHOT">
+    <feature name="studentfeature" description="studentfeature-feature" version="1.0.0.SNAPSHOT">
+        <details>studentfeature details</details>
+        <bundle start-level="50">mvn:com.theatmo/studentmanagement/1.0-SNAPSHOT</bundle>
+        <bundle start-level="50" dependency="true">mvn:com.theatmo/customexception/1.0-SNAPSHOT</bundle>
+        <bundle start-level="50" dependency="true">mvn:com.theatmo/validations/1.0-SNAPSHOT</bundle>
+        <bundle start-level="50" dependency="true">mvn:com.theatmo/dbconnection/1.0-SNAPSHOT</bundle>
+        <bundle start-level="50" dependency="true">mvn:org.postgresql/postgresql/42.3.1</bundle>
+        <bundle start-level="50" dependency="true">mvn:com.theatmo/studentinputs/1.0-SNAPSHOT</bundle>
+    </feature>
+</features>
