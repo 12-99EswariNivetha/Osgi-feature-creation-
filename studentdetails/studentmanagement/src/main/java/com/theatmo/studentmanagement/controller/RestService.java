@@ -9,11 +9,18 @@ import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Deactivate;
 
+/**
+ * RestService.
+ *
+ * @author EswariNivethaVU
+ */
 @Component(immediate = true)
 public class RestService {
 
     private Server server;
-
+    /**
+     * Activate the server.
+     */
     @Activate
     public void activate() {
         try {
@@ -23,13 +30,15 @@ public class RestService {
             bean.setProvider(new JacksonJsonProvider());
             bean.setServiceBean(new StudentApiImpl());
             server = bean.create();
-            System.out.println(server);
+            //System.out.println(server);
         } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
     }
-
+    /**
+     * Deactivate the server.
+     */
     @Deactivate
     public void deactivate() throws Exception {
         if (server != null) {

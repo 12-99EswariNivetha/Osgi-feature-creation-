@@ -3,6 +3,7 @@ package com.theatmo.studentmanagement.service;
 
 import com.theatmo.studentmanagement.model.Student;
 
+import java.util.List;
 import java.util.Map;
 
 
@@ -17,7 +18,7 @@ public interface StudentService {
 
     boolean removeStudent(final int rollNo);
 
-    Map<Integer, Student> getAllStudents();
+    List< Student> getAllStudents();
 
     Student selectStudent(final int rollNo);
 

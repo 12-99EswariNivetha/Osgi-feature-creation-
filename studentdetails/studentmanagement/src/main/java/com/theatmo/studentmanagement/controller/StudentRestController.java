@@ -3,8 +3,14 @@ package com.theatmo.studentmanagement.controller;
 import com.theatmo.studentmanagement.model.Student;
 
 import javax.ws.rs.*;
+import java.util.List;
 import java.util.Map;
 
+/**
+ * StudentRestController provide Api service to Student Api implementation.
+ *
+ * @author EswariNivethaVU
+ */
 public interface StudentRestController {
 
     @Path("/add")
@@ -22,18 +28,13 @@ public interface StudentRestController {
     @PUT
     boolean updateStudentDetails(final Student student);
 
-    @Path("/view")
-    @Produces("application/json")
-    @GET
-    Map<Integer, Student> getAllStudents();
-
     @Path("/{rollNo}")
     @Produces("application/json")
     @GET
     Student searchStudentDetail(final int rollNo);
 
-    @Path("/get")
+    @Path("/view")
     @Produces("application/json")
     @GET
-    String getdetail();
+    List<Student> getAllStudentdetails(int start, int limit);
 }

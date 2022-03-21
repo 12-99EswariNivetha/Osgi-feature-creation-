@@ -156,14 +156,7 @@ public class StudentView {
      * Display all Students and send a request to the controller.
      */
     public static void showAllStudents() {
-
-        try {
-            for (Entry<Integer, Student> entry : STUDENT_CONTROLLER.getAllStudents().entrySet()) {
-                System.out.println(entry.getValue());
-            }
-        } catch (CustomException e) {
-            LOGGER.error(e);
-        }
+        System.out.println(STUDENT_CONTROLLER.getAllStudents());
     }
 
     /**

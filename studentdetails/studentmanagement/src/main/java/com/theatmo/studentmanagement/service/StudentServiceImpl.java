@@ -7,6 +7,8 @@ import com.theatmo.studentmanagement.model.Student;
 import com.theatmo.studentmanagement.studentdao.StudentDao;
 import com.theatmo.studentmanagement.studentdao.StudentDaoImpl;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,6 +25,9 @@ public class StudentServiceImpl implements StudentService {
     private StudentServiceImpl(){
 
     }
+    /**
+     * Create instance of Singleton class
+     */
     public static StudentService getInstance(){
 
         if(studentService == null){
@@ -56,13 +61,8 @@ public class StudentServiceImpl implements StudentService {
     /**
      * Get all students details from database.
      */
-    public Map<Integer, Student> getAllStudents() {
-        final Map<Integer, Student> students = STUDENTDAO.getAllStudents();
-
-        if (!students.isEmpty()) {
-            return students;
-        }
-        throw new RecordNotfoundException(" Record Not Found ");
+    public List< Student> getAllStudents() {
+        return new ArrayList<Student>(STUDENTDAO.getAllStudents().values());
     }
 
     /**

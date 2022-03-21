@@ -3,8 +3,7 @@ package com.theatmo.studentmanagement.controller;
 import com.theatmo.studentmanagement.service.StudentService;
 import com.theatmo.studentmanagement.service.StudentServiceImpl;
 import com.theatmo.studentmanagement.model.Student;
-
-import java.util.Map;
+import java.util.List;
 
 /**
  * Controller act as a mediator between view and model.
@@ -45,7 +44,7 @@ public class StudentController  {
     /**
      * Getting all the Student Details.
      */
-    public  Map<Integer, Student> getAllStudents() {
+    public  List<Student> getAllStudents() {
         return STUDENT_SERVICE.getAllStudents();
     }
 
