@@ -5,8 +5,8 @@
 /misc.xml
 /jarRepositories.xml
 /compiler.xml
-customexception\target
-dbconnection\target
-studentinputs\target
-studentmanagement\target
-validations\target
+/customexception/target
+/dbconnection/target
+/studentinputs/target
+/studentmanagement/target
+/validations/target
